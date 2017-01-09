@@ -49,9 +49,9 @@ Proyecto final de la asignatura de Sistemas Inteligentes del itinerario de Compu
 
 4. # Métodos
 
-   En este apartado vamos a explicar aquellos conocimientos que hacen falta para comprender el sistema. No vamos a entrar a nivel de matemáticas ni estadísticas sino a nivel de herramientas o modelos. 
+   En este apartado vamos a explicar aquellos conocimientos que hacen falta para comprender el sistema. No vamos a entrar a nivel de matemáticas ni estadísticas sino a nivel de herramientas o modelos.
 
-   {0}.  # MIDI
+   ### MIDI
 
       **¿Qué es MIDI?**
 
@@ -59,21 +59,29 @@ Proyecto final de la asignatura de Sistemas Inteligentes del itinerario de Compu
 
       **¿Qué es un archivo .midi?**
 
-      El formato estándar MIDI (SMF) permite una manera estandarizada para almacenar, transportar y abrir secuencias en otros sistemas. El compacto tamaño de estos archivos ha permitido que sean implementados de manera numerosa en computadoras. Fueron creados para su uso universal e incluir información como el valor de las notas, tiempo y nombre de las pistas. La lírica puede ser incluida como metadata
+      El formato estándar MIDI (SMF) permite una manera estandarizada para almacenar, transportar y abrir secuencias en otros sistemas. El compacto tamaño de estos archivos ha permitido que sean implementados de manera numerosa en computadoras. Fueron creados para su uso universal e incluir información como el valor de las notas, tiempo y nombre de las pistas. La lírica puede ser incluida como metadata. Un archivo *.midi* viene codificado de la siguiente forma:
 
-      **¿Por qué MIDI en el proyecto?**
+   ![](/Users/zephyr/Desktop/midi.png)
+
+      Pero esto a nosotros no nos interesa puesto que usaremos una librería que nos permite manipular este tipo de archivos de una forma sencilla.
+
+   **¿Por qué MIDI en el proyecto?**
 
       Será el formato en el que vamos a trabajar para generar la música. La base de muestras del sistema se encuentra en formato .*midi*, compone la base de entrenamiento.
 
       **Más información**
 
-      En estos enlaces se puede encontrar más información acerca de el formato de notación musical .*midi* :
+      En estos enlaces se puede encontrar más información acerca de el formato de notación musical .*midi*:
 
-      http://www.css-audiovisual.com/areas/guias/midi-mensajes.htm
+   ​   http://www.css-audiovisual.com/areas/guias/midi-mensajes.htm
 
       https://es.wikipedia.org/wiki/MIDI
 
-   {0}.  # Restricted Boltzmann machine
+   **Base de datos musicales**
+
+   [http://www.midiworld.com](http://www.midiworld.com)
+
+   ### Restricted Boltzmann machine
 
       **¿Qué es? Definición y estructutra**
 
@@ -93,10 +101,15 @@ Proyecto final de la asignatura de Sistemas Inteligentes del itinerario de Compu
       activation f((weight w * input x) + bias b ) = output a
    ```
    ![](https://deeplearning4j.org/img/input_path_RBM.png)
+
    ![](https://deeplearning4j.org/img/weighted_input_RBM.png)
-   ![](https://deeplearning4j.org/img/multiple_inputs_RBM.png)
+
+   ![https://deeplearning4j.org/img/weighted_input_RBM.png](https://deeplearning4j.org/img/weighted_input_RBM.png)
+
    ![](https://deeplearning4j.org/img/multiple_hidden_layers_RBM.png)
+
    Pero en esta introducción a las máquinas Boltzmann restringidas, nos centraremos en cómo aprenden a reconstruir los datos por sí mismos de una manera no supervisada (medios sin supervisión sin etiquetas de verdad en un conjunto de prueba), haciendo varios pasos hacia adelante y hacia atrás entre la capa visible Y la capa oculta sin implicar una red más profunda.
+
    En la fase de reconstrucción, las activaciones de la capa oculta se convierten en la entrada en un paso hacia atrás. Se multiplican por los mismos pesos, uno por borde de entrenudo, así como x se ajustó en peso en el paso hacia adelante. La suma de esos productos se añade a un sesgo de capa visible en cada nodo visible, y la salida de esas operaciones es una reconstrucción; Es decir, una aproximación de la entrada original. Esto puede representarse mediante el siguiente diagrama:
    ![](https://deeplearning4j.org/img/reconstruction_RBM.png)
 
@@ -204,7 +217,7 @@ Proyecto final de la asignatura de Sistemas Inteligentes del itinerario de Compu
 
 *  ## Github
 
-              GitHub es una plataforma de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones Git.
+                   GitHub es una plataforma de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones Git.
 
    * ## Bitbucket
 
@@ -214,15 +227,41 @@ Proyecto final de la asignatura de Sistemas Inteligentes del itinerario de Compu
 
      HipChat es un servicio Web para chat interno / privado y mensajería instantánea. Además de un chat individual o en grupo / tema, también ofrece almacenamiento en archivos basado en la nube, videollamadas, historial de mensajes de búsqueda y visualización de imágenes en línea.
 
-6. # Proceso
+6. # Entrenamiento
+
+   Una vez tenemos el sistema terminado y una base de datos musical, ejecutamos el programa principal para que comience el proceso de entrenamiento. Hemos usado una muestra de 126 canciones, es una muestra pequeña, es por ello que los resultados puedan no ser lo mas ajustados posibles. Para incrementar el porcentaje de acierto se recomienda subir el numero de canciones de muestra. Cómo demuestran muchos otros proyectos, este tipo de sistema generadores de arte tienen la necesidad de muestras mucho mayores, para un generador de música una base de 2000 muestras sería el mínimo recomendable. 
+
+   Obviamente el entrenamiento con una muestra tan grande incrementa mucho el tiempo de ejecución. Este sistema a partir de la muestra de 126 canciones genera una salida de 10 resultados.
+
+   Una vez conocemos este detalle vamos a explicar el proceso:
+
+   Primero ejecutamos el comando:
+
+   ```shell
+   $ python rbm_chords.py
+   ```
+
+   ![](/Users/zephyr/Desktop/entrenamiento.png)
+
+   Como vemos el tiempo aproximado de una muestra de 126 canciones es de 2 minutos 17 segundo aproximadamente en un MacBook Pro modelo: *MacBook Pro (13-inch, Mid 2010) Processor 2,4 GHz Intel Core 2 Duo*
 
 7. # Resultados
 
-8. # Observaciones
+   Una vez finaliza la etapa de entrenamiento se genera 10 canciones en el mismo directorio del fichero. Para la reproducción de estos archivos generados hace falta un. software específico capaz de reproducir este tipo de formato, no todos los reproductores de música son capaz nosotros hemos usado un reproductor multiplataforma llamado *MIDItrail*. Podemos verlo a continuación:
 
-9. # Conclusiones
+   ![](/Users/zephyr/Desktop/programa.png)
 
-10. # Referencias
+   Vamos a destacar que como dijimos al principio del informe el generador sólo genera notas musicales para un mismo intrumento veamos un ejemplo de canción que no es capaz de generar. A continuación aparece una canción famosa de hip hop cuya melodía esta generada por muchas melodías al mismo tiempo(Cada uno corres ponde un color:
+
+   ![](/Users/zephyr/Desktop/programa2.png)
+
+   ​
+
+8. # Conclusiones
+
+   Con este sistema generador de música hemos sido capaz de generar música de una forma sencilla, lo que hacerlo a mano puede ser mucho más complicado, el contenido del arte tiene el principal problema de la inspiración, se necesitan muchas horas para descubrir nuevas melodías e incluso melodías que nos puedan gustar y de esta forma podemos crear melodías interesantes de un forma sencilla y rápida sin mucho esfuerzo y crear un contenido similar al que queremos y hemos definido en nuestra base de datos musical.
+
+9. # Referencias
 
 [https://www.python.org](https://www.python.org)
 
