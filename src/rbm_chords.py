@@ -115,10 +115,6 @@ bh_adder = tf.mul(lr/size_bt, tf.reduce_sum(tf.sub(h, h_sample), 0, True))
 # Ejecuta los 3.
 updt = [W.assign_add(W_adder), bv.assign_add(bv_adder), bh.assign_add(bh_adder)]
 
-
-### Run the graph!
-# Now it's time to start a session and run the graph! 
-
 with tf.Session() as sess:
     
     # Iniciamos el modelo.
