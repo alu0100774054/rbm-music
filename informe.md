@@ -85,9 +85,9 @@ Proyecto final de la asignatura de Sistemas Inteligentes del itinerario de Compu
 
       **¿Qué es? Definición y estructutra**
 
-      Inventado por Geoff Hinton, las Máquinas Boltzmann Restringidas (rbm-musics) son redes neurales superficiales de dos capas que constituyen los bloques de construcción de redes de creencias profundas. La primera capa del rbm-music se denomina capa visible, o input, y la segunda es la capa oculta.
+      Inventado por Geoff Hinton, las Máquinas Boltzmann Restringidas (RBMs) son redes neurales superficiales de dos capas que constituyen los bloques de construcción de redes de creencias profundas. La primera capa del RBM se denomina capa visible, o input, y la segunda es la capa oculta.
 
-   ![https://deeplearning4j.org/img/two_layer_rbm-music.png](https://deeplearning4j.org/img/two_layer_rbm-music.png)
+   ![https://deeplearning4j.org/img/two_layer_RBM.png](https://deeplearning4j.org/img/two_layer_RBM.png)
 
       Cada círculo en el gráfico anterior representa una unidad similar a una neurona llamada nodo, y los nodos son simplemente donde los cálculos tienen lugar. Los nodos están conectados entre sí a través de capas, pero no hay dos nodos de la misma capa conectados.
 
@@ -100,18 +100,18 @@ Proyecto final de la asignatura de Sistemas Inteligentes del itinerario de Compu
    ```python
       activation f((weight w * input x) + bias b ) = output a
    ```
-   ![](https://deeplearning4j.org/img/input_path_rbm-music.png)
+   ![](https://deeplearning4j.org/img/input_path_RBM.png)
 
-   ![](https://deeplearning4j.org/img/weighted_input_rbm-music.png)
+   ![](https://deeplearning4j.org/img/weighted_input_RBM.png)
 
-   ![https://deeplearning4j.org/img/weighted_input_rbm-music.png](https://deeplearning4j.org/img/weighted_input_rbm-music.png)
+   ![https://deeplearning4j.org/img/weighted_input_RBM.png](https://deeplearning4j.org/img/weighted_input_RBM.png)
 
-   ![](https://deeplearning4j.org/img/multiple_hidden_layers_rbm-music.png)
+   ![](https://deeplearning4j.org/img/multiple_hidden_layers_RBM.png)
 
    Pero en esta introducción a las máquinas Boltzmann restringidas, nos centraremos en cómo aprenden a reconstruir los datos por sí mismos de una manera no supervisada (medios sin supervisión sin etiquetas de verdad en un conjunto de prueba), haciendo varios pasos hacia adelante y hacia atrás entre la capa visible Y la capa oculta sin implicar una red más profunda.
 
    En la fase de reconstrucción, las activaciones de la capa oculta se convierten en la entrada en un paso hacia atrás. Se multiplican por los mismos pesos, uno por borde de entrenudo, así como x se ajustó en peso en el paso hacia adelante. La suma de esos productos se añade a un sesgo de capa visible en cada nodo visible, y la salida de esas operaciones es una reconstrucción; Es decir, una aproximación de la entrada original. Esto puede representarse mediante el siguiente diagrama:
-   ![](https://deeplearning4j.org/img/reconstruction_rbm-music.png)
+   ![](https://deeplearning4j.org/img/reconstruction_RBM.png)
 
    **Generación de cada nota**
 
@@ -240,7 +240,7 @@ Proyecto final de la asignatura de Sistemas Inteligentes del itinerario de Compu
    Primero ejecutamos el comando:
 
    ```shell
-   $ python Rbm-music_chords.py
+   $ python rbm_chords.py
    ```
 
    ![](/rbm-music/src/media/terminal.gif)
