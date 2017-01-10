@@ -4,7 +4,7 @@ Proyecto final de la asignatura de Sistemas Inteligentes del itinerario de Compu
 
 
 
-​	 ![](src/media/portada.jpg)
+​	 ![](/rbm/src/media/portada.jpg)
 
 
 
@@ -61,7 +61,7 @@ Proyecto final de la asignatura de Sistemas Inteligentes del itinerario de Compu
 
       El formato estándar MIDI (SMF) permite una manera estandarizada para almacenar, transportar y abrir secuencias en otros sistemas. El compacto tamaño de estos archivos ha permitido que sean implementados de manera numerosa en computadoras. Fueron creados para su uso universal e incluir información como el valor de las notas, tiempo y nombre de las pistas. La lírica puede ser incluida como metadata. Un archivo *.midi* viene codificado de la siguiente forma:
 
-   ![](/Users/zephyr/Desktop/midi.png)
+   ![](/rbm/src/media/midi.png)
 
       Pero esto a nosotros no nos interesa puesto que usaremos una librería que nos permite manipular este tipo de archivos de una forma sencilla.
 
@@ -115,7 +115,7 @@ Proyecto final de la asignatura de Sistemas Inteligentes del itinerario de Compu
 
    **Generación de cada nota**
 
-   ![](/Users/zephyr/Desktop/3.png)![](/Users/zephyr/Desktop/2.png)![](/Users/zephyr/Desktop/1.png)
+   ![](/rbm/src/media/3.png)![](/Users/zephyr/Desktop//rbm/src/media/![](/rbm/src/media/1.png)
    **Enlace a un tutorial para más información**
 
    https://deeplearning4j.org/restrictedboltzmannmachine.html#
@@ -217,7 +217,7 @@ Proyecto final de la asignatura de Sistemas Inteligentes del itinerario de Compu
 
 *  ## Github
 
-                   GitHub es una plataforma de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones Git.
+                    GitHub es una plataforma de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones Git.
 
    * ## Bitbucket
 
@@ -241,7 +241,7 @@ Proyecto final de la asignatura de Sistemas Inteligentes del itinerario de Compu
    $ python rbm_chords.py
    ```
 
-   ![](/Users/zephyr/Desktop/entrenamiento.png)
+   ![](/rbm/src/media/terminal.gif)
 
    Como vemos el tiempo aproximado de una muestra de 126 canciones es de 2 minutos 17 segundo aproximadamente en un MacBook Pro modelo: *MacBook Pro (13-inch, Mid 2010) Processor 2,4 GHz Intel Core 2 Duo*
 
@@ -249,7 +249,7 @@ Proyecto final de la asignatura de Sistemas Inteligentes del itinerario de Compu
 
    Una vez finaliza la etapa de entrenamiento se genera 10 canciones en el mismo directorio del fichero. Para la reproducción de estos archivos generados hace falta un. software específico capaz de reproducir este tipo de formato, no todos los reproductores de música son capaz nosotros hemos usado un reproductor multiplataforma llamado *MIDItrail*. Podemos verlo a continuación:
 
-   ![](/Users/zephyr/Desktop/programa.png)
+   ![](/rbm/src/media/reproductor.mp4)
 
    Vamos a destacar que como dijimos al principio del informe el generador sólo genera notas musicales para un mismo intrumento veamos un ejemplo de canción que no es capaz de generar. A continuación aparece una canción famosa de hip hop cuya melodía esta generada por muchas melodías al mismo tiempo(Cada uno corres ponde un color:
 
