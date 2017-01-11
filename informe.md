@@ -104,7 +104,7 @@ Proyecto final de la asignatura de Sistemas Inteligentes del itinerario de Compu
 
    ![](https://deeplearning4j.org/img/weighted_input_RBM.png)
 
-   ![https://deeplearning4j.org/img/weighted_input_RBM.png](https://deeplearning4j.org/img/weighted_input_RBM.png)
+   ​
 
    ![](https://deeplearning4j.org/img/multiple_hidden_layers_RBM.png)
 
@@ -219,7 +219,7 @@ Proyecto final de la asignatura de Sistemas Inteligentes del itinerario de Compu
 
 *  ## Github
 
-                      GitHub es una plataforma de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones Git.
+                       GitHub es una plataforma de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones Git.
 
    * ## Bitbucket
 
@@ -228,6 +228,10 @@ Proyecto final de la asignatura de Sistemas Inteligentes del itinerario de Compu
    * ## HipChat
 
      HipChat es un servicio Web para chat interno / privado y mensajería instantánea. Además de un chat individual o en grupo / tema, también ofrece almacenamiento en archivos basado en la nube, videollamadas, historial de mensajes de búsqueda y visualización de imágenes en línea.
+
+*  ## MIDITrail
+
+   MIDITRail es un reproductor MIDI que proporciona visualización 3D de conjuntos de datos MIDI
 
 6. # Entrenamiento
 
